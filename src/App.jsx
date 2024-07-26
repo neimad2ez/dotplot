@@ -7,6 +7,7 @@ import { ProtectedRoute } from "./pages/components/protectedRoute";
 import { Home } from "./pages/home";
 import { Private } from "./pages/components/private/private";
 import { useEffect, useState } from "react";
+import Notification from "./pages/components/notification/Notification";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,6 +40,7 @@ function App() {
         </ProtectedRoute>}>
       </Route>
     </Routes>
+    <Notification />
     </BrowserRouter>
   )
 }

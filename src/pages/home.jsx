@@ -3,6 +3,7 @@ import { useState } from "react"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const Home = ({user}) => {
     const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ export const Home = ({user}) => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                toast.success("Successfully created account!")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -33,11 +35,13 @@ export const Home = ({user}) => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
+                toast.success("Successfully logged in!")
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
+                toast.error("Wrong email or password!")
             })
     }
 
