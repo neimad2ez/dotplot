@@ -1,0 +1,39 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+
+    sign-out {
+        width: 120px;
+    }
+
+    #image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        img {
+            width: 100px;
+            margin-bottom: 80px;
+        }
+    }
+
+    #bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        input {
+            color: white;
+        }
+    }
+
+    #btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+}

@@ -50,10 +50,8 @@ export const Home = ({user}) => {
 
     return (
         <section>
-            <h2>Homepage</h2>
             <form action="">
-                {isSignUpActive && <legend>Sign Up</legend>}
-                {!isSignUpActive && <legend>Sign In</legend>}
+                <img src="src\pictures\dotplot.jpeg" />
                 <fieldset>
                     <ul>
                         <li>

@@ -5,7 +5,7 @@ import './App.css'
 import { auth } from "./firebase";
 import { ProtectedRoute } from "./pages/components/protectedRoute";
 import { Home } from "./pages/home";
-import { Private } from "./pages/private";
+import { Private } from "./pages/components/private/private";
 import { useEffect, useState } from "react";
 
 function App() {
