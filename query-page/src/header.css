@@ -1,0 +1,32 @@
+#sign_out{
+
+    position: absolute;
+    background-color: #005EB8;
+    margin-top: 5%;
+    right:100px;
+    width: 10%;
+    color: white;
+    border-radius: 12px;
+    font-size: larger;
+    cursor: pointer;
+
+}
+
+.head{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+}
+
+img{
+    width: 10%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 20px;
+}
+
+#header{
+    background-color: darkgray;
+}
