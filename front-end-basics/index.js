@@ -1,15 +1,17 @@
 import express from 'express'
-import path from 'path'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import cors from 'cors'
+
+
 
 const app = express();
 dotenv.config();
 
-
+app.use(cors())
 mongoose.connect("mongodb://localhost:27017/Dotplotproject").then(() => {
     console.log("Database connection successfull")
-    app.listen(8000, () => {
+    app.listen(7080, () => {
         console.log('Server is running')
     });
 })
@@ -17,12 +19,14 @@ mongoose.connect("mongodb://localhost:27017/Dotplotproject").then(() => {
 const userSchema = new mongoose.Schema({
     Diagnosis: String,
     Coordinates: String,
+    "US scan ID": Number,
 });
 
 const UserModel = mongoose.model("patients", userSchema)
 
 app.get("/getPatients", async(req, res) =>{
-    const userData = await UserModel.find();
+    const input = req.query.input;
+    const userData = await UserModel.find({"US scan ID": input});
     res.json(userData)
 });
 
