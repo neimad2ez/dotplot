@@ -7,6 +7,11 @@ export const Private = () => {
 
     const [input, setInput] = useState("");
 
+    const handleSave = () => {
+        localStorage.setItem('input', input);
+        setInput("");
+    };
+
     function handleInputChange(event) {
         setInput(event.target.value);
     }
@@ -28,7 +33,7 @@ export const Private = () => {
                 <input type="text" placeholder="Search..." value={input} onChange={handleInputChange} />
             
 
-                <button id="search">Search</button>
+                <button id="search" onClick={handleSave}>Search</button>
             </div>
 
             <div id="btn">
