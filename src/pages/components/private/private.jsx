@@ -3,6 +3,7 @@ import { auth } from "../../../firebase";
 import './private.css';
 import { useState } from "react";
 import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 export const Private = () => {
 
@@ -20,14 +21,16 @@ export const Private = () => {
             const scanResult = await axios.get(`http://localhost:7080/getScans?input=${scanID}`);
             const scanInfo = scanResult.data;
             console.log(scanInfo);
-            setInput("");
-            setPatientInfo("");
-            setScanID("");
+            setPatientInfo(patientInfo);
+            setScanID(scanInfo);
         } catch (error) {
             console.error('Error fetching the patient data', error);
         }
     };
 
+    if (!(patientInfo.length == 0)) {
+        return <Navigate to='/patient'></Navigate>
+    }
 
     function handleInputChange(event) {
         setInput(event.target.value);

@@ -8,6 +8,7 @@ import { Home } from "./pages/home";
 import { Private } from "./pages/components/private/private";
 import { useEffect, useState } from "react";
 import Notification from "./pages/components/notification/Notification";
+import { Patient } from "./pages/patient/Patient";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,6 +40,7 @@ function App() {
           <Private></Private>
         </ProtectedRoute>}>
       </Route>
+      <Route index path='/patient' element = {<Patient></Patient>}></Route>
     </Routes>
     <Notification />
     </BrowserRouter>
