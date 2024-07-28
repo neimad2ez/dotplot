@@ -3,7 +3,7 @@ import { auth } from "../../../firebase";
 import './private.css';
 import { useState } from "react";
 import axios from 'axios';
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const Private = () => {
 
@@ -11,6 +11,7 @@ export const Private = () => {
     const[patientInfo, setPatientInfo] = useState([])
     const[scanID, setScanID] = useState([])
     const[scanResult, setScanResult] = useState([])
+    const navigate = useNavigate()
 
     const handleSearch = async () => {
         try {
@@ -21,6 +22,8 @@ export const Private = () => {
             const scanResult = await axios.get(`http://localhost:7080/getScans?input=${scanID}`);
             const scanInfo = scanResult.data;
             console.log(scanInfo);
+
+            navigate('/patient', {state: {patientInfo, scanInfo}});
             setPatientInfo(patientInfo);
             setScanID(scanInfo);
         } catch (error) {
