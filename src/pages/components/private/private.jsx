@@ -7,13 +7,22 @@ import axios from 'axios';
 export const Private = () => {
 
     const [input, setInput] = useState("");
-    const[patients,setPatients] = useState([])
+    const[patientInfo, setPatientInfo] = useState([])
+    const[scanID, setScanID] = useState([])
+    const[scanResult, setScanResult] = useState([])
 
     const handleSearch = async () => {
         try {
             const response = await axios.get(`http://localhost:7080/getPatients?input=${input}`);
-            console.log(response.data);
+            const patientInfo = response.data;
+            console.log(patientInfo);
+            const scanID = patientInfo[0]["US scan ID"];
+            const scanResult = await axios.get(`http://localhost:7080/getScans?input=${scanID}`);
+            const scanInfo = scanResult.data;
+            console.log(scanInfo);
             setInput("");
+            setPatientInfo("");
+            setScanID("");
         } catch (error) {
             console.error('Error fetching the patient data', error);
         }
