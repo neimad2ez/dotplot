@@ -13,6 +13,7 @@ export const Private = () => {
         try {
             const response = await axios.get(`http://localhost:7080/getPatients?input=${input}`);
             console.log(response.data);
+            setInput("");
         } catch (error) {
             console.error('Error fetching the patient data', error);
         }

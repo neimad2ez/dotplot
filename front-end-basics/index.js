@@ -16,39 +16,27 @@ mongoose.connect("mongodb://localhost:27017/Dotplotproject").then(() => {
     });
 })
 
-const userSchema = new mongoose.Schema({
-    Diagnosis: String,
-    Coordinates: String,
+const patientSchema = new mongoose.Schema({
+    "Patient ID": Number,
+    "Patient Name": String,
+    Age: Number,
+    "Height (cm)": Number,
+    "Weight (kg)": Number,
+    History: String,
     "US scan ID": Number,
+});
+
+const userSchema = new mongoose.Schema({
+    "US scan ID": Number,
+    Coordinates: String,
+    "Scan Date": String,
+    Diagnosis: String,
 });
 
 const UserModel = mongoose.model("patients", userSchema)
 
 app.get("/getPatients", async(req, res) =>{
     const input = req.query.input;
-    const userData = await UserModel.find({"US scan ID": input});
+    const userData = await UserModel.find({"Patient ID": input});
     res.json(userData)
 });
-
-//(app.get('/', (req, res) => {
-   // res.sendFile(path.join(__dirname, 'index.html'))
-//})
-
-//app.get('/api/users', (req, res) =>{
- //   const users= [{
-      //  id: '123',
-  ///      name: 'Shaun'
- //   }, {
-  //      id: '234',
-  //      name:'Bob'
-  //  }, {
-   //     id:'345',
-   ///     name: 'Sue',
-  //  }];
-
-   // res.json(users)
-//});
-
-//app.listen(8080, () =>{
- //   console.log('Server listening on port 8080')
-//});)
