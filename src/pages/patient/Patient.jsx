@@ -8,6 +8,8 @@ export const Patient = () => {
     const location = useLocation();
     const {patientInfo, scanInfo} = location.state;
     const patient = patientInfo[0]
+    const imageurl = `${patient["US scan ID"]}.png`
+    console.log(imageurl);
     const scan = scanInfo[0]
     const navigate = useNavigate();
     const coord1 = scan["Coordinates"][0]
@@ -71,13 +73,13 @@ export const Patient = () => {
                 <div className="box">
                     <div className="text">
                         <h1>Patient Information</h1>
-                            <h4>Patient ID: {patient["Patient ID"]}</h4>
-                            <h4>Name: {patient["Patient Name"]}</h4>
+                            <h4><strong>Patient ID:</strong> {patient["Patient ID"]}</h4>
+                            <h4><b>Name</b> {patient["Patient Name"]}</h4>
                             <h4>Age: {patient["Age"]}</h4>
                             <h4>Height: {patient["Height (cm)"]}cm</h4>
                             <h4>Weight: {patient["Weight (kg)"]}kg</h4>
                             <h4>History of Breast Cancer: {patient["History of breast cancer"]}</h4>
-                            <h4>US scan ID: {patient["US scan ID"]}</h4>
+                            <h4>US Scan ID: {patient["US scan ID"]}</h4>
                         <h1>Scan Information</h1>
                             <h4>Scan Date: {scan["Scan Date"]}</h4>
                             <h4>Diagnosis: {scan["Diagnosis"]}</h4>
@@ -85,13 +87,23 @@ export const Patient = () => {
                     </div>
                 </div>
                 <div className="box">
-                    <div className="model">
-                        <img id="image" src="https://uploads-ssl.webflow.com/669ff9d1f834f9d0603e5d17/66a0f6f59068fe3c45aa7907_3d%20model.png" alt="Sample Image"/>
-                        <div className="grid-overlay" id="grid-overlay"></div>
+                    <div className="modelBox">
+                        <h2>2D Model</h2>
+                        <div className="model">
+                            <img id="image" src="https://uploads-ssl.webflow.com/669ff9d1f834f9d0603e5d17/66a0f6f59068fe3c45aa7907_3d%20model.png" alt="Sample Image"/>
+                            <div className="grid-overlay" id="grid-overlay"></div>
+                        </div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                     </div>
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 </div>
-                <div className="box">Box 3</div>
+                <div className="box">
+                    <div className="ultrasoundBox">
+                        <h2>Ultrasound Image</h2>
+                        <div className="ultrasound">
+                            <img src={`src/pictures/${patient["US scan ID"]}.png`}  />
+                        </div>
+                    </div>
+                </div>
                 <div className='back-btn'>
                     <button onClick={handleBack}>Back</button>
                 </div>
