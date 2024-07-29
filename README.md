@@ -1,8 +1,8 @@
-# React + Vite
+# DotPlot Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DotPlot Portal is a Patient Data Management System & Visualisation Tool. It allows for users to log in and sign up and look for patient ID's to see a patients information e.g Patient Name, Diagnosis and Coordinates of Lesion. Furthermore, it gives pictures of the ultrasound taken and a 2D model of where the lesion is. 
 
-Currently, two official plugins are available:
+# Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/user-attachments/assets/888f91c2-04ff-49f1-b501-4f39739c623f
+
