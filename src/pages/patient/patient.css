@@ -83,10 +83,10 @@
 
 .grid-overlay {
     position: absolute;
-    top: 235px;
-    left: 140px;
-    width: 27%;
-    height: 17.7%;
+    top: 237px;
+    left: 147px;
+    width: 23%;
+    height: 14%;
     pointer-events: none; /* Allows clicking through the grid */
     display: grid;
     grid-template-columns: repeat(8, 1fr); /* Adjust number of columns */
@@ -94,7 +94,7 @@
     background-color: transparent;
 }
 .grid {
-    border: 1px solid black;
+    border: 1px transparent;
     box-sizing: border-box;
     background-color: transparent;
 }

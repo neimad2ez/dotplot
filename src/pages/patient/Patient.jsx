@@ -74,7 +74,7 @@ export const Patient = () => {
                     <div className="text">
                         <h1>Patient Information</h1>
                             <h4><strong>Patient ID:</strong> {patient["Patient ID"]}</h4>
-                            <h4><b>Name</b> {patient["Patient Name"]}</h4>
+                            <h4><b>Name:</b> {patient["Patient Name"]}</h4>
                             <h4>Age: {patient["Age"]}</h4>
                             <h4>Height: {patient["Height (cm)"]}cm</h4>
                             <h4>Weight: {patient["Weight (kg)"]}kg</h4>
