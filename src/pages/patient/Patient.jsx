@@ -92,7 +92,7 @@ export const Patient = () => {
                     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 </div>
                 <div className="box">Box 3</div>
-                <div className='btn'>
+                <div className='back-btn'>
                     <button onClick={handleBack}>Back</button>
                 </div>
             </div>

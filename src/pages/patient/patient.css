@@ -9,7 +9,7 @@
     height: 300px;
     margin: 15px;
     padding: 40px;
-    border: 2px solid #ccc;
+    /* border: 2px solid #ccc; */
 
     .text {
         margin-top: -47px;
@@ -38,7 +38,7 @@
     }
 }
 
-.btn {
+.back-btn {
     position: absolute;
     margin-top: -55px;
     button{
@@ -55,14 +55,19 @@
 
     display: inline-block;
 }
-#image {
+.model {
     display: block;
-    width: 300px; /* Adjust to your image size */
     height: auto; /* Maintain aspect ratio */
+    margin-left: -24px;
+
+    img {
+        width: 350px; /* Adjust to your image size */
+    }
 }
+
 .grid-overlay {
     position: absolute;
-    top: 180px;
+    top: 220px;
     left: 137px;
     width: 27%;
     height: 17.7%;
