@@ -18,51 +18,52 @@ export const Patient = () => {
     function handleBack(){
         navigate('/private');
         }
-        function createGrid(rows, columns) {
-            const gridOverlay = document.getElementById('grid-overlay');
-            gridOverlay.innerHTML = ''; // Clear existing grid
-            const gridWidth = gridOverlay.clientWidth;
-            const gridHeight = gridOverlay.clientHeight;
+    function createGrid(rows, columns) {
+        const gridOverlay = document.getElementById('grid-overlay');
+        gridOverlay.innerHTML = ''; // Clear existing grid
+        const gridWidth = gridOverlay.clientWidth;
+        const gridHeight = gridOverlay.clientHeight;
 
-            for (let i = 0; i < rows; i++) {
-                for (let j = 0; j < columns; j++) {
-                    const gridCell = document.createElement('div');
-                    gridCell.className = 'grid';
-                    gridCell.style.left = `${j * (gridWidth / columns)}px`;
-                    gridCell.style.top = `${i * (gridHeight / rows)}px`;
-                    gridCell.dataset.row = i;  // Store row information
-                    gridCell.dataset.col = j;  // Store column information
-                    gridOverlay.appendChild(gridCell);
-                }
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
+                const gridCell = document.createElement('div');
+                gridCell.className = 'grid';
+                gridCell.style.left = `${j * (gridWidth / columns)}px`;
+                gridCell.style.top = `${i * (gridHeight / rows)}px`;
+                gridCell.dataset.row = i;  // Store row information
+                gridCell.dataset.col = j;  // Store column information
+                gridOverlay.appendChild(gridCell);
             }
         }
+    }
 
-        function highlightRegion(col, row) {
-            const cells = document.querySelectorAll('#grid-overlay .grid');
-            cells.forEach(cell => {
-                const cellRow = parseInt(cell.dataset.row, 10)+1;
-                const cellCol = parseInt(cell.dataset.col, 10)+1;
-                if (cellRow === row && cellCol === col) {
-                    cell.classList.add('active');
-                } else {
-                    cell.classList.remove('active');
-                }
-            });
-        }
-        const objectDict = {
-            'A':1,
-            'B':2,
-            'C':3,
-            'D':4,
-            'E':5,
-            'F':6,
-            'G':7,
-            'H':8
-        };
-        useEffect(() => {
-            createGrid(4, 8);
-            highlightRegion(objectDict[coord1], coord2);
-        }, []);
+    function highlightRegion(col, row) {
+        const cells = document.querySelectorAll('#grid-overlay .grid');
+        cells.forEach(cell => {
+            const cellRow = parseInt(cell.dataset.row, 10)+1;
+            const cellCol = parseInt(cell.dataset.col, 10)+1;
+            if (cellRow === row && cellCol === col) {
+                cell.classList.add('active');
+            } else {
+                cell.classList.remove('active');
+            }
+        });
+    }
+    const objectDict = {
+        'A':1,
+        'B':2,
+        'C':3,
+        'D':4,
+        'E':5,
+        'F':6,
+        'G':7,
+        'H':8
+    };
+    
+    useEffect(() => {
+        createGrid(4, 8);
+        highlightRegion(objectDict[coord1], coord2);
+    }, []);
 
     return (
         <div>
