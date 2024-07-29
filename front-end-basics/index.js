@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 
 app.use(cors())
-mongoose.connect("mongodb://localhost:27017/Dotplotproject").then(() => {
+mongoose.connect("mongodb://localhost:27017/dotplot").then(() => {
     console.log("Database connection successfull")
     app.listen(7080, () => {
         console.log('Server is running')
