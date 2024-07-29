@@ -64,41 +64,39 @@ export const Patient = () => {
 
     return (
         <div>
-            <div class="container">
+            <div className="container">
                 <div id="img">
                     <img src="src\pictures\dotplot.jpeg" />
                 </div>
-                <div class="box">Box 1</div>
-                <div class="box">Box 2</div>
-                <div class="box">Box 3</div>
+                <div className="box">
+                    <div className="text">
+                        <h1>Patient Information</h1>
+                            <h4>Patient ID: {patient["Patient ID"]}</h4>
+                            <h4>Name: {patient["Patient Name"]}</h4>
+                            <h4>Age: {patient["Age"]}</h4>
+                            <h4>Height: {patient["Height (cm)"]}cm</h4>
+                            <h4>Weight: {patient["Weight (kg)"]}kg</h4>
+                            <h4>History of Breast Cancer: {patient["History of breast cancer"]}</h4>
+                            <h4>US scan ID: {patient["US scan ID"]}</h4>
+                        <h1>Scan Information</h1>
+                            <h4>Scan Date: {scan["Scan Date"]}</h4>
+                            <h4>Diagnosis: {scan["Diagnosis"]}</h4>
+                            <h4>Coordinate of Lesion: {scan["Coordinates"]}</h4>
+                    </div>
+                </div>
+                <div className="box">
+                    <div className="model">
+                        <img id="image" src="https://uploads-ssl.webflow.com/669ff9d1f834f9d0603e5d17/66a0f6f59068fe3c45aa7907_3d%20model.png" alt="Sample Image"/>
+                        <div className="grid-overlay" id="grid-overlay"></div>
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                </div>
+                <div className="box">Box 3</div>
                 <div className='btn'>
                     <button onClick={handleBack}>Back</button>
                 </div>
             </div>
-
-                <h2>HELLO</h2>
-                <h1>Patient Information</h1>
-                    <h4>Patient ID: {patient["Patient ID"]}</h4>
-                    <h4>Name: {patient["Patient Name"]}</h4>
-                    <h4>Age: {patient["Age"]}</h4>
-                    <h4>Height: {patient["Height (cm)"]}cm</h4>
-                    <h4>Weight: {patient["Weight (kg)"]}kg</h4>
-                    <h4>History of Breast Cancer: {patient["History of breast cancer"]}</h4>
-                    <h4>US scan ID: {patient["US scan ID"]}</h4>
-                <h1>Scan Information</h1>
-                    <h4>Scan Date: {scan["Scan Date"]}</h4>
-                    <h4>Diagnosis: {scan["Diagnosis"]}</h4>
-                    <h4>Coordinate of Lesion: {scan["Coordinates"]}</h4>
-                    <center>
-        <div className="image-container">
-            <img id="image" src="https://uploads-ssl.webflow.com/669ff9d1f834f9d0603e5d17/66a0f6f59068fe3c45aa7907_3d%20model.png" alt="Sample Image"/>
-            <div className="grid-overlay" id="grid-overlay"></div>
         </div>
-    </center>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        </div>
-        
-
     )
     
 }

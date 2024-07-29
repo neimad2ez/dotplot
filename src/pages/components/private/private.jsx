@@ -19,6 +19,7 @@ export const Private = () => {
             const patientInfo = response.data;
             console.log(patientInfo);
             const scanID = patientInfo[0]["US scan ID"];
+            console.log(scanID)
             const scanResult = await axios.get(`http://localhost:7080/getScans?input=${scanID}`);
             const scanInfo = scanResult.data;
             console.log(scanInfo);
