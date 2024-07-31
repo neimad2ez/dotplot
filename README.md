@@ -30,6 +30,10 @@ DotPlot Portal is a Patient Data Management System & Visualisation Tool. It allo
 * HTML
 * CSS
 
+## Demo
+
+https://github.com/user-attachments/assets/888f91c2-04ff-49f1-b501-4f39739c623f
+
 ## Getting Started
 In order to run the DotPlot Portal application, follow these steps:
 
@@ -87,7 +91,5 @@ In order to run the DotPlot Portal application, follow these steps:
 ### Running the application
 To start the application, you can access the frontend application by entering the URL into your browser provided by Vite and the backend API will be accessible at `http://localhost:7080`
 
-## Demo
 
-https://github.com/user-attachments/assets/888f91c2-04ff-49f1-b501-4f39739c623f
 
